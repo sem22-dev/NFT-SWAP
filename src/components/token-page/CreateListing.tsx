@@ -168,7 +168,7 @@ export function CreateListing(props: Props) {
             }
             const _qty = BigInt(qtyRef.current?.value ?? 1);
             if (type === "ERC1155") {
-              if (!_qty || _qty <= 0n) {
+              if (!_qty || _qty <= BigInt(0)) {
                 return toast({
                   title: "Error",
                   description: "Invalid quantity",
@@ -211,7 +211,7 @@ export function CreateListing(props: Props) {
               contract: marketplaceContract,
               assetContractAddress: nftContract.address,
               tokenId,
-              quantity: type === "ERC721" ? 1n : _qty,
+              quantity: type === "ERC721" ? BigInt(1) : _qty,
               currencyContractAddress: currency?.tokenAddress,
               pricePerToken: value,
             });
