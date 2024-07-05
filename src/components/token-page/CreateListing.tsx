@@ -56,8 +56,8 @@ export function CreateListing(props: Props) {
 
   const nativeToken: Token = {
     tokenAddress: NATIVE_TOKEN_ADDRESS,
-    symbol: chain.nativeCurrency?.symbol || "NATIVE TOKEN",
-    icon: NATIVE_TOKEN_ICON_MAP[chain.id] || "",
+    symbol: chain.nativeCurrency?.symbol || "ETH",
+    icon: 'https://taikoscan.io/assets/taiko/images/svg/logos/token-light.svg?v=24.6.4.0'|| "",
   };
 
   const options: Token[] = [nativeToken].concat(supportedTokens);

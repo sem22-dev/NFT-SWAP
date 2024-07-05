@@ -1,5 +1,5 @@
 import type { Chain } from "thirdweb";
-import { avalancheFuji, polygonAmoy, sepolia } from "./chains";
+import {  sepolia } from "./chains";
 
 export type Token = {
   tokenAddress: string;
@@ -21,40 +21,10 @@ export type SupportedTokens = {
  * By default the Marketplace V3 contract supports any asset (token)
  */
 export const SUPPORTED_TOKENS: SupportedTokens[] = [
-  {
-    chain: avalancheFuji,
-    tokens: [
-      {
-        tokenAddress: "0x5425890298aed601595a70ab815c96711a31bc65",
-        symbol: "USDC",
-        icon: "/erc20-icons/usdc.png",
-      },
-      {
-        tokenAddress: "0x82dcec6aa3c8bfe2c96d40d8805ee0da15708643",
-        symbol: "USDT",
-        icon: "/erc20-icons/usdt.png",
-      },
-      // Add more ERC20 here...
-    ],
-  },
 
 
   
-  {
-    chain: polygonAmoy,
-    tokens: [
-      {
-        tokenAddress: "0x41e94eb019c0762f9bfcf9fb1e58725bfb0e7582",
-        symbol: "USDC",
-        icon: "/erc20-icons/usdc.png",
-      },
-      {
-        tokenAddress: "0xbcf39d8616d15fd146dd5db4a86b4f244a9bc772",
-        symbol: "USDT",
-        icon: "/erc20-icons/usdt.png",
-      },
-    ],
-  },
+
 
   {
     chain: sepolia,
@@ -76,6 +46,5 @@ export const SUPPORTED_TOKENS: SupportedTokens[] = [
 export const NATIVE_TOKEN_ICON_MAP: { [key in Chain["id"]]: string } = {
   1: "/native-token-icons/eth.png",
   [sepolia.id]: "/native-token-icons/eth.png",
-  [avalancheFuji.id]: "/native-token-icons/avax.png",
-  [polygonAmoy.id]: "/native-token-icons/matic.png",
+
 };
